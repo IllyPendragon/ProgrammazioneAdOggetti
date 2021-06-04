@@ -1,0 +1,45 @@
+package it.univpm.Foot.controller;
+
+import java.util.Vector;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import it.univpm.Foot.model.Competizioni;
+import it.univpm.Foot.model.Scorers;
+import it.univpm.Foot.model.StatsCompetitions;
+import it.univpm.Foot.model.StatsScorers;
+import it.univpm.Foot.stats.StatsOnCompetitions;
+import it.univpm.Foot.stats.StatsOnScorers;
+import it.univpm.Foot.api.*;
+
+@RestController
+public class Controller { 
+		
+	@GetMapping("/competitions")
+	public Vector<Competizioni> competitions (@RequestParam String countryCode, String competition) {
+		System.out.println("inizio JsonRest");
+		return ChiamataCompetitions.chiamata(countryCode, competition); 		
+	 }
+	@GetMapping("/scorers")
+	public Vector<Scorers> scorers (@RequestParam String competition, Long minNumberOfGoals, String position) {
+		System.out.println("inizio JsonRest");
+		return ChiamataScorers.chiamata(competition, minNumberOfGoals, position); 
+		
+	 }
+	
+	@GetMapping("/statsCompetitions")
+	public StatsCompetitions statsCompetitions(@RequestParam String countryCode, String competition) {
+		System.out.println("inizio JsonRest");
+		return StatsOnCompetitions.getResult(countryCode, competition); 
+		
+	 }
+	
+	@GetMapping("/statsScorers")
+	public StatsScorers statsScorers(@RequestParam String competition) {
+		System.out.println("inizio JsonRest");
+		return StatsOnScorers.getResult(competition); 
+		
+	 }	
+}
