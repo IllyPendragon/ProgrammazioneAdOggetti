@@ -1,5 +1,10 @@
 package it.univpm.Foot.model;
 
+/**
+ * Classe che definisce Competizioni
+ * 
+ */
+
 public class Competizioni {
 
 	/**
@@ -24,21 +29,50 @@ public class Competizioni {
 	 */
 	private String vincitore;
 	
+	/**
+	 *  Variabile che descrive la nazionalità della competizione
+	 */
 	private String nationality;
-	
+	/**
+	 *  Variabile che descrive il codice della nazionalità della competizione
+	 */
 	private String countryCode;
-	
+	/**
+	 *  Variabile che descrive il giorno della competizione
+	 */
 	private Long currentMatchday;
 	
+	/**
+	 * Variabile che descrive il numero delle squadre
+	 */
 	// attributo calcolato
 	private Long teamsNumber;
 	
-	
+	/**
+	 * Variabile che descrive la media delle stagioni
+	 */
 	private Long numberOfAvailableSeasons;
 		
 	//Costruttori
+	/**
+	 * Costruttore di default
+	 */
 	public Competizioni() {}
 	
+	/**
+	 * Costruttore utile all'inizializzazione dell'oggetto
+	 * 
+	 * @param nome Assegna il nome alla competizione
+	 * @param codice Assegna il codice alla competizione
+	 * @param dataIniziale Assegna la data iniziale alla competizione
+	 * @param dataFinale Assegna la data finale alla competizione
+	 * @param vincitore Assegna il vincitore della competizione
+	 * @param nationality Assegna la nazionalità alla competizione
+	 * @param countryCode Assegna un codice di nazionalità alla competizione
+	 * @param currentMatchday Assegna una giornata alla competizione
+	 * @param teamsNumber Assegna il numero delle squadre 
+	 * @param numberOfAvailableSeasons Assegna la quantità media delle stagioni
+	 */
 	public Competizioni(String nome, String codice, String dataIniziale, String dataFinale, String vincitore, String nationality, String countryCode, Long currentMatchday, Long teamsNumber, Long numberOfAvailableSeasons) {
 		this.nome= nome;
 		this.codice=codice;
@@ -120,43 +154,63 @@ public class Competizioni {
 	public void setVincitore(String vincitore) {
 		this.vincitore = vincitore;
 	}
-
+	/**
+	 * @return the  nationality
+	 */
 	public String getNationality() {
 		return nationality;
 	}
-
+	/**
+	 * @param  nationality the  nationality to set
+	 */
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
 	}
-
+	/**
+	 * @return the countryCode
+	 */
 	public String getCountryCode() {
 		return countryCode;
 	}
-
+	/**
+	 * @param countryCode the countryCode to set
+	 */
 	public void setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
 	}
-
+	/**
+	 * @return the currentMatchday
+	 */
 	public Long getCurrentMatchday() {
 		return currentMatchday;
 	}
-
+	/**
+	 * @param currentMatchday the currentMatchday to set
+	 */
 	public void setCurrentMatchday(Long currentMatchday) {
 		this.currentMatchday = currentMatchday;
 	}
-
+	/**
+	 * @return the teamsNumber
+	 */
 	public Long getTeamsNumber() {
 		return teamsNumber;
 	}
-
+	/**
+	 * @param teamsNumber the teamsNumber to set
+	 */
 	public void setTeamsNumber(Long teamsNumber) {
 		this.teamsNumber = teamsNumber;
 	}
-
+	/**
+	 * @return the numberOfAvailableSeasons
+	 */
 	public Long getNumberOfAvailableSeasons() {
 		return numberOfAvailableSeasons;
 	}
-
+	/**
+	 * @param numberOfAvailableSeasons the numberOfAvailableSeasons to set
+	 */
 	public void setNumberOfAvailableSeasons(Long numberOfAvailableSeasons) {
 		this.numberOfAvailableSeasons = numberOfAvailableSeasons;
 	}

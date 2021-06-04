@@ -6,13 +6,27 @@ import it.univpm.Foot.api.ChiamataCompetitions;
 import it.univpm.Foot.filter.StatsFilter;
 import it.univpm.Foot.model.Competizioni;
 import it.univpm.Foot.model.StatsCompetitions;
-
+/**
+ * Classe che consente di determinare le statistiche sulle competizioni
+ *
+ */
 public class StatsOnCompetitions {
 
+	/**
+	 * Costruttore di default
+	 */
 	public StatsOnCompetitions() {
 		// TODO Auto-generated constructor stub
 	}
-	
+	/**
+	 * Metodo che consente di determinare il numero minimo/massimo/medio di squadre,
+	 * la durata media delle competizioni e la quantità media di stagioni
+	 * 
+	 * @param _countryCode Fornisce il codice di nazionalità della competizione
+	 * @param _competition Fornisce la competizione
+	 * 
+	 * @return Un oggetto sc (StatsCompetition) che contine le statistiche sulle competizioni
+	 */
 	public static StatsCompetitions getResult(String _countryCode, String _competition) {
 		
 		Vector<Competizioni> listaCompetizioni = new Vector<Competizioni>();

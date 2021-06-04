@@ -11,8 +11,19 @@ import it.univpm.Foot.model.*;
 import it.univpm.Foot.filter.BaseFilter;
 
 public class ParserScorers {
+	/**
+	 * Vettore di Scorers nel quale vengono inseriti gli Scorers creati
+	 * a partire dal JSON e poi viene restituito alla classe ChiamataScorers
+	 */
 	private Vector<Scorers> listaScorers;
-	
+	/**
+	 * Metodo che analizza il json della chiamata scorers  e restituisce un vettore di scorers
+	 * 
+	 * @param chiamata Fornisce il codice json che viene analizzato dal metodo
+	 * @param _minNumberOfGoals Fornisce il numero minimo di Goal del giocatore
+	 * @param _position Fornisce i ruolo del giocatore
+	 * @return listaScorers Vettore di Scorers contenente gli scorers creati, poi restituito
+	 */
 	public Vector<Scorers> parse (String chiamata, Long _minNumberOfGoals, String _position){
 		
 		

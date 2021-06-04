@@ -11,8 +11,19 @@ import it.univpm.Foot.model.*;
 import it.univpm.Foot.filter.CompetitionsFilter;
 
 public class ParserCompetizioni {
+	/**
+	 * Vettore di Competizioni nel quale vengono inserite le competizioni create
+	 * a partire dal JSON e poi viene restituito alla classe ChiamataCompetitions
+	 */
 	private Vector<Competizioni> listaCompetizioni;
-	
+	/**
+	 * Metodo che analizza il json della chiamata competiotions  e restituisce un vettore di competizioni
+	 * 
+	 * @param chiamata Fornisce il codice json che viene analizzato dal metodo
+	 * @param _countryCode Fornisce il codice della nazionale di cui si desidera ottenere le informazioni
+	 * @param _competition Fornisce la competizione
+	 * @return listaCompetizioni Vettore di Competizioni contenente le competizioni create, poi restituito
+	 */
 	public Vector<Competizioni> parse (String chiamata, String _countryCode, String _competition){
 		
 	    listaCompetizioni = new Vector<Competizioni>();
