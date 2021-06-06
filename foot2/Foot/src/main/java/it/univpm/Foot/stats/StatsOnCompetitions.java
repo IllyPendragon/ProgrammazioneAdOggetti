@@ -67,11 +67,15 @@ public class StatsOnCompetitions {
 			}
 			
 		}
-		
+		// Numero minimo di squadre
 		sc.setMinNumberTeams(StatsFilter.min(nArray));
+		// Numero massimo di squadre
 		sc.setMaxNumberTeams(StatsFilter.max(nArray));
+		// Numero medio di squadre
 		sc.setAverageNumberTeams(StatsFilter.average(nArray, count1));
+		// Numero medio di stagioni disponibile
         sc.setNumberAverageOfAvailableSeasons(StatsFilter.average(nArray2, count2));
+        // Durata media 
         sc.setAverageDuration(StatsFilter.average(timeInDaysArray, count3));
         
 //		int low = Integer.MAX_VALUE;

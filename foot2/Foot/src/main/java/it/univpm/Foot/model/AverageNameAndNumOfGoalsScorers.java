@@ -42,7 +42,7 @@ public class AverageNameAndNumOfGoalsScorers {
 	 * @param name Assegna il nome al giocatore
 	 * @param numberOfGoals Assegna il numero dei Goal del giocatore
 	 * @param teamName Assegna il nome alla squadra
-	 * @param numberScorers ??
+	 * @param numberScorers Assegna il numero dei marcatori
 	 * @param averageOfGoals Assegna la media dei Goal segnati
 	 */
 	public AverageNameAndNumOfGoalsScorers(String name, long numberOfGoals, String teamName, long numberScorers, long averageOfGoals) {

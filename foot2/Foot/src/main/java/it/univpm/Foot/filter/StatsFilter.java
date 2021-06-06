@@ -12,12 +12,27 @@ import java.util.Set;
 import java.util.Vector;
 
 import it.univpm.Foot.model.AverageNameAndNumOfGoalsScorers;
-
+/**
+ * Classe che estende la classe BaseFilter 
+ * 
+ *
+ */
 public class StatsFilter extends BaseFilter {
 
+	/**
+	 * Costruttore di default
+	 */
 	public StatsFilter() {
 	}
 	
+	/**
+	 * Metodo di tipo static che calcola il tempo in giorni tra la data finale e la data iniziale
+	 * 
+	 * @param dataIniziale 
+	 * @param dataFinale
+	 * @return timeInDays
+	 * @throws Exception (Formato delle date incorretto!)
+	 */
 	public static Long timeInDays(String dataIniziale, String dataFinale) throws Exception {
 		// calcola il tempo in giorni tra la data finale e la data iniziale
 		Date df = null;
@@ -38,44 +53,84 @@ public class StatsFilter extends BaseFilter {
 		return timeInDays;	
 	}
 	
+	/**
+	 * Metodo di tipo static che calcola il tempo in giorni tra la data finale e la data iniziale
+	 * 
+	 * @param dataIniziale
+	 * @param dataFinale
+	 * @return
+	 * @throws Exception
+	 */
 	public static int timeInDaysInt(String dataIniziale, String dataFinale) throws Exception {
 		// calcola il tempo in giorni tra la data finale e la data iniziale
 		return (int) timeInDays(dataIniziale, dataFinale).intValue();	
 	}	
-	
+	/**
+	 * Metodo di tipo static che restituisce il valore minimo di un array
+	 * @param array
+	 * @return
+	 */
 	public static long min(int array[]) {
 	    int result = Integer.MAX_VALUE;
 	    for (int a : array) result = Math.min(result, a);
 	    Long l2=Long.valueOf(result);
 	    return l2.longValue();
 	}
-
+	
+	/**
+	 * Metodo di tipo static che restituisce il valore massimo di un array
+	 * @param array
+	 * @return l2
+	 */
 	public static long max(int array[]) {
 	    int result = Integer.MIN_VALUE;
 	    for (int a : array) result = Math.max(result, a);
 	    Long l2=Long.valueOf(result);
 	    return l2.longValue();
 	}
-
+	/**
+	 * Metodo di tipo static che restituisce la somma di un array
+	 * 
+	 * @param array
+	 * @return l2
+	 */
 	public static long sum(int array[]) {
 	    int result = 0;
 	    for (int a : array) result += a;
 	    Long l2=Long.valueOf(result);
 	    return l2.longValue();
 	}
-
+    /**
+     * Metodo di tip statis che restituisce la media di un array
+     * 
+     * @param array
+     * @return l2
+     */
 	public static long average(int array[]) {
 		double d = (double)sum(array)/array.length;
 	    Long l2=Long.valueOf((int) d);
 	    return l2.longValue();
 	}
 	
+	/**
+     * Metodo di tip statis che restituisce la media di un array
+     * 
+     * @param array Fornisce un gruppo di variabili dello stesso tipo
+     * @param lenght Fornisce la lunghezza dell'array
+     * @return l2
+     */
 	public static long average(int array[], int lenght) {
 		double d = (double)sum(array)/lenght;
 	    Long l2=Long.valueOf((int) d);
 	    return l2.longValue();
 	}
 	
+	/**
+	 * Metodo di tipo static che cerca la stringa più ripetuta
+	 * 
+	 * @param str Array di String
+	 * @return bestString Fornisce la stringa più ripetuta 
+	 */
 	public static String highestRepeated(String[] str) {
 		// la stringa più ripetuta
 	    String[] sorted = Arrays.copyOf(str, str.length);
@@ -102,6 +157,12 @@ public class StatsFilter extends BaseFilter {
 	    return bestString;
 	}
 	
+	/**
+	 *  Metodo di tipo static che cerca la stringa meno ripetuta
+	 * 
+	 * @param str array di String
+	 * @return bestString Fornisce la stringa meno ripetuta
+	 */
 	public static String theLeastRepeated(String[] str) {
 		// la stringa meno ripetuta
 	    String[] sorted = Arrays.copyOf(str, str.length);
@@ -128,6 +189,13 @@ public class StatsFilter extends BaseFilter {
 	    return bestString;
 	}	
 	
+	/**
+	 * Metodo di tipo static ??
+	 * 
+	 * @param vet
+	 * @param teamName
+	 * @return
+	 */
 	public static int getPosTeamName(Vector<AverageNameAndNumOfGoalsScorers> vet, String teamName) {
 		AverageNameAndNumOfGoalsScorers a = new AverageNameAndNumOfGoalsScorers();
 		for (int j = 0; j < vet.size(); j++) {

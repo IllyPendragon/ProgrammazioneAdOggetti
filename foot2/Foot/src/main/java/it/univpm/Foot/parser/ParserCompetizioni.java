@@ -10,6 +10,11 @@ import org.json.simple.parser.ParseException;
 import it.univpm.Foot.model.*;
 import it.univpm.Foot.filter.CompetitionsFilter;
 
+ /**
+ * Classe che analizza il codice json della chiamata alla rotta competition dell'API di Football-data
+ * 
+ */
+ 
 public class ParserCompetizioni {
 	/**
 	 * Vettore di Competizioni nel quale vengono inserite le competizioni create

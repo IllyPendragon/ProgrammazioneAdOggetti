@@ -87,13 +87,13 @@ public class Competizioni {
 	};
 
 	/**
-	 * @return the name
+	 * @return the nome
 	 */
 	public String getNome() {
 		return nome;
 	}
 	/**
-	 * @param name the name to set
+	 * @param name the nome to set
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;

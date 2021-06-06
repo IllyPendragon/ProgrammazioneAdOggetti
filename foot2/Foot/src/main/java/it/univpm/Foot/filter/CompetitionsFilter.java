@@ -4,7 +4,6 @@ package it.univpm.Foot.filter;
 /**
  * Classe CompetitionsFilter che estende la classe BaseFilter
  * 
- * @author Ilaria Prencipe
  */
 public class CompetitionsFilter extends BaseFilter {
 

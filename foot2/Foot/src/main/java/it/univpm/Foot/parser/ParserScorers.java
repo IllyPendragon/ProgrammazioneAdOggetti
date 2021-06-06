@@ -9,7 +9,10 @@ import org.json.simple.parser.ParseException;
 
 import it.univpm.Foot.model.*;
 import it.univpm.Foot.filter.BaseFilter;
-
+/**
+* Classe che analizza il codice json della chiamata alla rotta scorers dell'API di Football-data
+* 
+*/
 public class ParserScorers {
 	/**
 	 * Vettore di Scorers nel quale vengono inseriti gli Scorers creati

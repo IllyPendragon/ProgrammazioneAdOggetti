@@ -2,10 +2,19 @@ package it.univpm.Foot.filter;
 
 public class BaseFilter {
 
+	/**
+	 * Costruttore di default
+	 */
 	public BaseFilter() {
 		// TODO Auto-generated constructor stub
 	}
-	
+	/**
+	 * Metodo di tipp static che restituisce true se le due stringhe sono uguali o str1 = * (carattere jolly)
+	 * 
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
 	public static boolean stringController(String str1, String str2) {
 		// torna true se le 2 stringhe sono uguali o str1 = * (carattere jolly)
 		boolean  b = false;
@@ -15,7 +24,13 @@ public class BaseFilter {
 		
 		return b;	
 	}	
-	
+	/**
+	 * 
+	 * 
+	 * @param l1
+	 * @param l2
+	 * @return
+	 */
 	public static boolean minLongController(Long l1, Long l2) {
 		// operator=0 significa =, operator=1 significa <=, operator=2 significa >=
 		// -1 è il carattere jolly
