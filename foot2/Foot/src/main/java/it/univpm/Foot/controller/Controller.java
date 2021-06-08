@@ -1,5 +1,6 @@
 package it.univpm.Foot.controller;
 
+
 import java.util.Vector;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,9 @@ import it.univpm.Foot.model.StatsScorers;
 import it.univpm.Foot.stats.StatsOnCompetitions;
 import it.univpm.Foot.stats.StatsOnScorers;
 import it.univpm.Foot.api.*;
+import it.univpm.Foot.exceptions.ParamException;
+import it.univpm.Foot.exceptions.WrongParam;
+
 
 /**
  * Classe che contiene le rotte get /competitions, /scorers
@@ -35,14 +39,13 @@ public class Controller {
 	 * @param competition Gestisce le competizioni in base al codice della competizione
 	 * @return Vettore di Competizioni
 	 * 
-	 */
-	
+	 */ 
 	@GetMapping("/competitions")
-	public Vector<Competizioni> competitions (@RequestParam String countryCode, String competition) {
-		System.out.println("inizio JsonRest");
-		return ChiamataCompetitions.chiamata(countryCode, competition); 		
-	 }
-	
+	public Vector<Competizioni> competitions (@RequestParam String countryCode, String competition) throws ParamException {
+			System.out.println("inizio JsonRest");
+			if(competition.isEmpty() || countryCode.isEmpty()) throw new ParamException();
+		    return ChiamataCompetitions.chiamata(countryCode, competition); 		
+		}
 	
 	/**
 	 * 
@@ -57,8 +60,9 @@ public class Controller {
 	 */
 	
 	@GetMapping("/scorers")
-	public Vector<Scorers> scorers (@RequestParam String competition, Long minNumberOfGoals, String position) {
+	public Vector<Scorers> scorers (@RequestParam String competition, Long minNumberOfGoals, String position)throws ParamException {
 		System.out.println("inizio JsonRest");
+		if(competition.isEmpty() || position.isEmpty()) throw new ParamException();
 		return ChiamataScorers.chiamata(competition, minNumberOfGoals, position); 
 		
 	 }
@@ -76,8 +80,9 @@ public class Controller {
 	 */
 	
 	@GetMapping("/statsCompetitions")
-	public StatsCompetitions statsCompetitions(@RequestParam String countryCode, String competition) {
+	public StatsCompetitions statsCompetitions(@RequestParam String countryCode, String competition)  throws ParamException {
 		System.out.println("inizio JsonRest");
+		if(competition.isEmpty() || countryCode.isEmpty()) throw new ParamException();
 		return StatsOnCompetitions.getResult(countryCode, competition); 
 		
 	 }
@@ -93,9 +98,9 @@ public class Controller {
 	 */
 	
 	@GetMapping("/statsScorers")
-	public StatsScorers statsScorers(@RequestParam String competition) {
-		System.out.println("inizio JsonRest");
-		return StatsOnScorers.getResult(competition); 
-		
+	public StatsScorers statsScorers(@RequestParam String competition) throws WrongParam {
+		System.out.println("inizio JsonRest");	
+		if(competition.isEmpty()) throw new WrongParam();
+			return StatsOnScorers.getResult(competition);	
 	 }	
 }

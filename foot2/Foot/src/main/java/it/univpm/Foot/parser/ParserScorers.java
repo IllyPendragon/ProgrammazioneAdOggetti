@@ -20,10 +20,10 @@ public class ParserScorers {
 	 */
 	private Vector<Scorers> listaScorers;
 	/**
-	 * Metodo che analizza il json della chiamata scorers  e restituisce un vettore di scorers
+	 * Metodo che analizza il json della chiamata scorers  e restituisce un vettore di marcatori
 	 * 
 	 * @param chiamata Fornisce il codice json che viene analizzato dal metodo
-	 * @param _minNumberOfGoals Fornisce il numero minimo di Goal del giocatore
+	 * @param _minNumberOfGoals Fornisce il numero minimo di Goal del marcatore
 	 * @param _position Fornisce i ruolo del giocatore
 	 * @return listaScorers Vettore di Scorers contenente gli scorers creati, poi restituito
 	 */

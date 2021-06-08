@@ -1,0 +1,40 @@
+package it.univpm.Foot;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import it.univpm.Foot.filter.StatsFilter;
+import it.univpm.Foot.model.Competizioni;
+
+public class statsFilterTest {
+
+		//Competizioni competitions;
+		StatsFilter stats;
+		String dataIniziale;
+		String dataFinale;
+		int num;
+
+		/**
+		 * Inizializza i componenti che verranno utilizzati per testare i metodi
+		 * @throws Exception
+		 */
+		@BeforeEach
+		void setUp() throws Exception{
+			stats = new StatsFilter();
+		}
+
+		@AfterEach
+		void tearDown() throws Exception{
+
+		}
+		
+		@Test
+		@DisplayName("Corretto funzionamento del metodo timeInDays ")
+		void timeInDaysTest() {
+			
+			num = stats.timeInDays(dataIniziale, dataFinale);
+			assertEquals(num,1);
+		}
+}

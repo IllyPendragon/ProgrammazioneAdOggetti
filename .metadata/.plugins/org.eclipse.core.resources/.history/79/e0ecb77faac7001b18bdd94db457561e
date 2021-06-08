@@ -1,0 +1,14 @@
+package it.univpm.Foot.exceptions;
+
+import org.json.simple.JSONObject;
+
+public class ParamException extends Exception{
+
+	public JSONObject ParamException()
+	  {
+		JSONObject  messaggio = new JSONObject();
+		messaggio.put(messaggio, "Attenzione, inserire parametro corretto!");
+		return messaggio;
+	//    super("Attenzione, inserire parametro!!");
+	  } 
+}

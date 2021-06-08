@@ -85,7 +85,7 @@ public class Competizioni {
 		this.teamsNumber = teamsNumber;
 		this.numberOfAvailableSeasons = numberOfAvailableSeasons;
 	};
-
+	
 	/**
 	 * @return the nome
 	 */

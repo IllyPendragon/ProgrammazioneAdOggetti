@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="it.univpm.Foot.exeption.ParameterException"/>
+    <fullyQualifiedTypeName name="it.univpm.Foot.exceptions.ParamException"/>
+    <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
+    <fullyQualifiedTypeName name="it.univpm.Foot.exceptions.WrongParam"/>
+    <fullyQualifiedTypeName name="it.univpm.Foot.model.Scorers"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
+    <fullyQualifiedTypeName name="it.univpm.Foot.model.Competizioni"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterEach"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.DisplayName"/>
+    <fullyQualifiedTypeName name="it.univpm.Foot.filter.BaseFilter"/>
+    <fullyQualifiedTypeName name="it.univpm.Foot.filter.StatsFilter"/>
+</qualifiedTypeNameHistroy>

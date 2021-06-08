@@ -9,7 +9,7 @@ public class BaseFilter {
 		// TODO Auto-generated constructor stub
 	}
 	/**
-	 * Metodo di tipp static che restituisce true se le due stringhe sono uguali o str1 = * (carattere jolly)
+	 * Metodo di tipo static che restituisce true se le due stringhe sono uguali o str1 = * (carattere jolly)
 	 * 
 	 * @param str1
 	 * @param str2
@@ -25,7 +25,7 @@ public class BaseFilter {
 		return b;	
 	}	
 	/**
-	 * 
+	 * Metodo di tipo static 
 	 * 
 	 * @param l1
 	 * @param l2

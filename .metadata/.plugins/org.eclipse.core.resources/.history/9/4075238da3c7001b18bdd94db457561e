@@ -1,0 +1,5 @@
+package it.univpm.Foot.exeption;
+
+public class ParameterException {
+
+}

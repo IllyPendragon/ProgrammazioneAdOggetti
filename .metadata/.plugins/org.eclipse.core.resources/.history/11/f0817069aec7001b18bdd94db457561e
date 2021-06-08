@@ -1,0 +1,5 @@
+package it.univpm.Foot.exceptions;
+
+public class WrongParam {
+
+}

@@ -19,7 +19,7 @@ public class AverageNameAndNumOfGoalsScorers {
 	 */
 	private long numberOfGoals;
 	/**
-	 * Variabile che descrive ??
+	 * Variabile che descrive il numero dei marcatori
 	 */
 	private long numberScorers;
 	/**
