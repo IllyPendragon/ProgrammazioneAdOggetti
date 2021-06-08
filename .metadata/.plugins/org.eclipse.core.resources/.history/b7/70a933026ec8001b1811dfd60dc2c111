@@ -25,8 +25,8 @@ public class BaseFilter {
 		return b;	
 	}	
 	/**
-	 * Metodo di tipo static in cui operator=0 significa =, operator=1 significa <=, operator=2 significa >=
-	 * -1 è il carattere jolly
+	 * Metodo di tipo static 
+	 * 
 	 * @param l1
 	 * @param l2
 	 * @return

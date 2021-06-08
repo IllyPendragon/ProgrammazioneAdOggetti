@@ -14,7 +14,6 @@ INDEX VERSION 1.131+C:\Users\Ilaria\Desktop\Progetto\.metadata\.plugins\org.ecli
 554368660.index
 3369203211.index
 1603577461.index
-1933089894.index
 545224981.index
 2104663634.index
 670049199.index
