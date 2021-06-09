@@ -6760,3 +6760,15 @@ org.eclipse.aether.transfer.ArtifactTransferException: Failure to transfer org.j
 	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-09 17:33:08.316
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.NmpYPpUw
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-09 17:33:08.317
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.NmpYPpUw
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-09 17:33:08.317
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-09 17:33:08.318
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.NmpYPpUw => OK
