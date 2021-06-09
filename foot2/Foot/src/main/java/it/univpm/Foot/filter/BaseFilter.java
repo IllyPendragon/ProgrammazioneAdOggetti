@@ -1,5 +1,7 @@
 package it.univpm.Foot.filter;
 
+import it.univpm.Foot.exceptions.BaseException;
+
 public class BaseFilter {
 
 	/**
@@ -15,7 +17,7 @@ public class BaseFilter {
 	 * @param str2
 	 * @return
 	 */
-	public static boolean stringController(String str1, String str2) {
+	public static boolean stringController(String str1, String str2) throws BaseException{
 		// torna true se le 2 stringhe sono uguali o str1 = * (carattere jolly)
 		boolean  b = false;
 		if (("*".equals(str1) || (str1!=null && str1.equals(str2)))) {
@@ -31,7 +33,7 @@ public class BaseFilter {
 	 * @param l2
 	 * @return
 	 */
-	public static boolean minLongController(Long l1, Long l2) {
+	public static boolean minLongController(Long l1, Long l2) throws BaseException {
 		// operator=0 significa =, operator=1 significa <=, operator=2 significa >=
 		// -1 è il carattere jolly
 		boolean  b = false;

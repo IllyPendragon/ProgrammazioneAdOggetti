@@ -1,0 +1,33 @@
+package it.univpm.Foot.exceptions;
+
+import org.json.simple.JSONObject;
+
+public class ParamException extends Exception {
+	
+	String message;
+
+	//parametro richiesto dell'interfaccia Serializable implementata dalla classe Exception
+	private static final long serialVersionUID = 1L;
+	
+	public  ParamException()
+	  {
+		super("Attenzione, parametro vuoto! Inserire almeno il carattere jolly!!");
+		} 
+	/**
+	 * Costrutture dell'oggetto.
+	 * @param message Stringa che rappresenta il messaggio di errore.
+	 */
+	public ParamException(String message) {
+		super();
+		this.message = message;
+	}
+	
+	/**
+	 * Metodo che restituisce un messaggio di errore passato dal costruttore
+	 * quando viene lanciata un'eccezione ParamException.
+	 * @return Stringa che contiene il messaggio d'errore da stampare.
+	 */
+	public String getMessage() {
+		return message;
+	}
+}

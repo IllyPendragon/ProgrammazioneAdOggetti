@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Vector;
 
+import it.univpm.Foot.exceptions.BaseException;
 import it.univpm.Foot.model.*;
 import it.univpm.Foot.parser.ParserCompetizioni;
 
@@ -26,7 +27,7 @@ public class ChiamataCompetitions {
 	 * @param competition Gestisce le competizioni in base al codice della competizione
 	 * @return listaCompetizioni Vettore di Competizioni ritornato dal metodo parse della classe ParserCompetizioni
 	 */
-public static Vector<Competizioni> chiamata(String countryCode, String competition) {
+public static Vector<Competizioni> chiamata(String countryCode, String competition) throws BaseException {
 		
 		Vector<Competizioni> listaCompetizioni = new Vector<Competizioni>();
 		
@@ -45,11 +46,10 @@ public static Vector<Competizioni> chiamata(String countryCode, String competiti
 			ParserCompetizioni eP = new ParserCompetizioni();
 			
 			listaCompetizioni = eP.parse(json, countryCode, competition);
-			
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Throwable e) {
+			e.printStackTrace(); 
+			BaseException pe =  new BaseException(e);
+			throw pe;
 		}
 		
 		return listaCompetizioni;

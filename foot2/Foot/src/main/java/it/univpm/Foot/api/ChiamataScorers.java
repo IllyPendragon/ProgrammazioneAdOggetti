@@ -8,6 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import it.univpm.Foot.exceptions.BaseException;
 import it.univpm.Foot.model.*;
 import it.univpm.Foot.parser.ParserScorers;
 
@@ -27,7 +28,7 @@ public class ChiamataScorers {
 	 * @param minNumberOfGoals gestisce i giocatori in base al numero minimo dei goal segnati
 	 * @return listaScorers Vettore di Scorers ritornato dal metodo parse della classe ParserScorers
 	 */
-	public static Vector<Scorers> chiamata(String competition, Long minNumberOfGoals, String position) {
+	public static Vector<Scorers> chiamata(String competition, Long minNumberOfGoals, String position) throws BaseException {
 			
 			Vector<Scorers> listaScorers = new Vector<Scorers>();
 			
@@ -54,10 +55,10 @@ public class ChiamataScorers {
 				
 				listaScorers = eP.parse(json, minNumberOfGoals, position);
 				
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
+			} catch (Throwable e) {
+				e.printStackTrace(); 
+				BaseException pe =  new BaseException(e);
+				throw pe;
 			}
 			
 			return listaScorers;

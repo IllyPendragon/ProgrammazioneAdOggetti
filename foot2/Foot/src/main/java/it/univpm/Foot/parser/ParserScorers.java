@@ -8,6 +8,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import it.univpm.Foot.model.*;
+import it.univpm.Foot.exceptions.BaseException;
 import it.univpm.Foot.filter.BaseFilter;
 /**
 * Classe che analizza il codice json della chiamata alla rotta scorers dell'API di Football-data
@@ -27,7 +28,7 @@ public class ParserScorers {
 	 * @param _position Fornisce i ruolo del giocatore
 	 * @return listaScorers Vettore di Scorers contenente gli scorers creati, poi restituito
 	 */
-	public Vector<Scorers> parse (String chiamata, Long _minNumberOfGoals, String _position){
+	public Vector<Scorers> parse (String chiamata, Long _minNumberOfGoals, String _position) throws BaseException{
 		
 		
 	    listaScorers = new Vector<Scorers>();
@@ -68,8 +69,9 @@ public class ParserScorers {
 				}
 				
 			}
-	      }catch (ParseException e) {
-				e.printStackTrace();
+	      }catch (Throwable e) { 
+				BaseException pe =  new BaseException(e);
+				throw pe;
 		  }
 	       return listaScorers;      
 	   }

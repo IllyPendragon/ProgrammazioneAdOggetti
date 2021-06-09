@@ -8,6 +8,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import it.univpm.Foot.model.*;
+import it.univpm.Foot.exceptions.BaseException;
 import it.univpm.Foot.filter.CompetitionsFilter;
 
  /**
@@ -29,7 +30,7 @@ public class ParserCompetizioni {
 	 * @param _competition Fornisce la competizione
 	 * @return listaCompetizioni Vettore di Competizioni contenente le competizioni create, poi restituito
 	 */
-	public Vector<Competizioni> parse (String chiamata, String _countryCode, String _competition){
+	public Vector<Competizioni> parse (String chiamata, String _countryCode, String _competition) throws BaseException {
 		
 	    listaCompetizioni = new Vector<Competizioni>();
 	    
@@ -90,8 +91,9 @@ public class ParserCompetizioni {
 			    }
 
 			}
-	     }catch (ParseException e) {
-				e.printStackTrace();
+	     }catch (Throwable e) { 
+				BaseException pe =  new BaseException(e);
+				throw pe;	
 	     }
 	     return listaCompetizioni;      
 	   }

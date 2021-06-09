@@ -1,0 +1,17 @@
+package it.univpm.Foot.exceptions;
+
+
+public class ParamException extends Exception {
+	
+	String message;
+
+	//parametro richiesto dell'interfaccia Serializable implementata dalla classe Exception
+	private static final long serialVersionUID = 1L;
+	
+	public  ParamException(Throwable t)
+	  {
+		t.printStackTrace();
+		super(t);
+		} 
+
+}

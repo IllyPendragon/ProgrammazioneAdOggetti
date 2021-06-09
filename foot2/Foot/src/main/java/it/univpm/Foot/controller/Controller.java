@@ -14,8 +14,7 @@ import it.univpm.Foot.model.StatsScorers;
 import it.univpm.Foot.stats.StatsOnCompetitions;
 import it.univpm.Foot.stats.StatsOnScorers;
 import it.univpm.Foot.api.*;
-import it.univpm.Foot.exceptions.ParamException;
-import it.univpm.Foot.exceptions.WrongParam;
+import it.univpm.Foot.exceptions.BaseException;
 
 
 /**
@@ -38,12 +37,14 @@ public class Controller {
 	 * @param countryCode Gestisce le competizioni in base alla nazionalità
 	 * @param competition Gestisce le competizioni in base al codice della competizione
 	 * @return Vettore di Competizioni
-	 * 
-	 */ 
+	 * @throws BaseException Se si lascia un parametro vuoto viene lanciata l'eccezione ParamException che visualizzerà il seguente
+	 *                        messaggio: "Attenzione, parametro vuoto! Inserire almeno il carattere jolly!!"
+	 *                        Il carattere Jolly è *
+	 */
 	@GetMapping("/competitions")
-	public Vector<Competizioni> competitions (@RequestParam String countryCode, String competition) throws ParamException {
+	public Vector<Competizioni> competitions (@RequestParam String countryCode, String competition) throws BaseException {
 			System.out.println("inizio JsonRest");
-			if(competition.isEmpty() || countryCode.isEmpty()) throw new ParamException();
+			if(competition.isEmpty() || countryCode.isEmpty()) throw new BaseException("Parametro vuoto!! Inserire almeno il carattere Jolly *");
 		    return ChiamataCompetitions.chiamata(countryCode, competition); 		
 		}
 	
@@ -60,11 +61,10 @@ public class Controller {
 	 */
 	
 	@GetMapping("/scorers")
-	public Vector<Scorers> scorers (@RequestParam String competition, Long minNumberOfGoals, String position)throws ParamException {
+	public Vector<Scorers> scorers (@RequestParam String competition, Long minNumberOfGoals, String position)throws BaseException {
 		System.out.println("inizio JsonRest");
-		if(competition.isEmpty() || position.isEmpty()) throw new ParamException();
+		if(competition.isEmpty() || position.isEmpty()) throw new BaseException("I parametri competition o position sono vuoti!! Inserire almeno il carattere Jolly *");
 		return ChiamataScorers.chiamata(competition, minNumberOfGoals, position); 
-		
 	 }
 	
 
@@ -80,9 +80,9 @@ public class Controller {
 	 */
 	
 	@GetMapping("/statsCompetitions")
-	public StatsCompetitions statsCompetitions(@RequestParam String countryCode, String competition)  throws ParamException {
+	public StatsCompetitions statsCompetitions(@RequestParam String countryCode, String competition)  throws BaseException {
 		System.out.println("inizio JsonRest");
-		if(competition.isEmpty() || countryCode.isEmpty()) throw new ParamException();
+		if(competition.isEmpty() || countryCode.isEmpty()) throw new BaseException("Parametro vuoto!! Inserire almeno il carattere Jolly *");
 		return StatsOnCompetitions.getResult(countryCode, competition); 
 		
 	 }
@@ -98,9 +98,9 @@ public class Controller {
 	 */
 	
 	@GetMapping("/statsScorers")
-	public StatsScorers statsScorers(@RequestParam String competition) throws WrongParam {
-		System.out.println("inizio JsonRest");	
-		if(competition.isEmpty()) throw new WrongParam();
+	public StatsScorers statsScorers(@RequestParam String competition) throws BaseException {
+		System.out.println("inizio JsonRest");
+		if(competition.isEmpty()) throw new BaseException("Parametro vuoto! Puoi inserire solo: BL1,PL,SA,PD,FL1,DED,PPL,CL,WC");
 			return StatsOnScorers.getResult(competition);	
 	 }	
 }

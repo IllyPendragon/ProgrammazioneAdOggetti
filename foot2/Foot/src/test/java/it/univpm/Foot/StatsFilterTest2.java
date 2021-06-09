@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import it.univpm.Foot.exceptions.BaseException;
 import it.univpm.Foot.filter.StatsFilter;
 /**
  * Classe che testa il corretto funzionamento del metodo theLeastRepeated
@@ -41,10 +42,11 @@ public class StatsFilterTest2 {
 	
 	/**
 	 * Test che verifica il corretto funzionamento del metodo theLeastRepeated  
+	 * @throws BaseException 
 	 */
 	@Test
 	@DisplayName("Corretto funzionamento del metodo theLeastRepeated")
-	void theLeastRepeated() {
+	void theLeastRepeated() throws BaseException {
 		String result = StatsFilter.theLeastRepeated(stringArray);
 		assertEquals(str,result);
 	}

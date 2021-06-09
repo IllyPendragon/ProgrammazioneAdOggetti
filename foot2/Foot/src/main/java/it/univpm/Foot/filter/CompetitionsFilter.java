@@ -1,5 +1,6 @@
 package it.univpm.Foot.filter;
 
+import it.univpm.Foot.exceptions.BaseException;
 
 /**
  * Classe CompetitionsFilter che estende la classe BaseFilter
@@ -25,7 +26,7 @@ public class CompetitionsFilter extends BaseFilter {
      * 
      * @return teamsNumber (numero delle squadre)
      */
-	public static Long teamsNumberFilter(Long currentMatchday) {
+	public static Long teamsNumberFilter(Long currentMatchday )throws BaseException {
 		
 		Long teamsNumber = null;
 	    if (currentMatchday!=null) {

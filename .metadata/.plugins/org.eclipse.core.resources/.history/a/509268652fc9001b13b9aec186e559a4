@@ -1,0 +1,12 @@
+package it.univpm.Foot.exceptions;
+
+public class WrongParam extends Exception {
+	
+	//parametro richiesto dell'interfaccia Serializable implementata dalla classe Exception
+		private static final long serialVersionUID = 1L;
+		
+	public  WrongParam ()
+	  {
+		super("Attenzione,il parametro è vuoto!! Puoi inserire solo: BL1,PL,SA,PD,FL1,DED,PPL,CL,WC");
+		} 
+  }

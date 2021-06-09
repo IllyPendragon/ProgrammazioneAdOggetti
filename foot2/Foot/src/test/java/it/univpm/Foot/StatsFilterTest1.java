@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import it.univpm.Foot.exceptions.BaseException;
 import it.univpm.Foot.filter.StatsFilter;
 /**
  * Classe che testa il corretto funzionamento del metodo highestRepeated
@@ -41,10 +42,11 @@ public class StatsFilterTest1 {
 		
 		/**
 		 * Test che verifica il corretto funzionamento del metodo theLeastRepeated  
+		 * @throws BaseException 
 		 */
 		@Test
 		@DisplayName("Corretto funzionamento del metodo highestRepeated")
-		void highestRepeated() {
+		void highestRepeated() throws BaseException {
 			String result = StatsFilter.highestRepeated(stringArray);
 			assertEquals(str,result);
 		}

@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Vector;
 
+import it.univpm.Foot.exceptions.BaseException;
 import it.univpm.Foot.model.AverageNameAndNumOfGoalsScorers;
 /**
  * Classe che estende la classe BaseFilter 
@@ -33,7 +34,7 @@ public class StatsFilter extends BaseFilter {
 	 * @return timeInDays
 	 * @throws Exception (Formato delle date incorretto!)
 	 */
-	public static Long timeInDays(String dataIniziale, String dataFinale) throws Exception {
+	public static Long timeInDays(String dataIniziale, String dataFinale) throws BaseException {
 		// calcola il tempo in giorni tra la data finale e la data iniziale
 		Date df = null;
 		Date di = null;
@@ -44,12 +45,10 @@ public class StatsFilter extends BaseFilter {
 			df=new SimpleDateFormat("yyyy-MM-dd").parse(dataFinale);
 			di=new SimpleDateFormat("yyyy-MM-dd").parse(dataIniziale);
 			timeInDays = timeInDays + ((df.getTime()-di.getTime())/1000/60/60/24);
-			
-		} catch (Exception e) {
-			System.out.println ("Formato delle date incorretto!");
-			throw e;
-		}		
-
+		} catch (Throwable e) { 
+			BaseException pe =  new BaseException("Formato delle date incorretto!");
+			throw pe;		
+		}
 		return timeInDays;	
 	}
 	
@@ -61,7 +60,7 @@ public class StatsFilter extends BaseFilter {
 	 * @return
 	 * @throws Exception
 	 */
-	public static int timeInDaysInt(String dataIniziale, String dataFinale) throws Exception {
+	public static int timeInDaysInt(String dataIniziale, String dataFinale) throws BaseException {
 		// calcola il tempo in giorni tra la data finale e la data iniziale
 		return (int) timeInDays(dataIniziale, dataFinale).intValue();	
 	}	
@@ -70,7 +69,7 @@ public class StatsFilter extends BaseFilter {
 	 * @param array
 	 * @return
 	 */
-	public static long min(int array[]) {
+	public static long min(int array[])throws BaseException {
 	    int result = Integer.MAX_VALUE;
 	    for (int a : array) result = Math.min(result, a);
 	    Long l2=Long.valueOf(result);
@@ -82,7 +81,7 @@ public class StatsFilter extends BaseFilter {
 	 * @param array
 	 * @return l2
 	 */
-	public static long max(int array[]) {
+	public static long max(int array[])throws BaseException {
 	    int result = Integer.MIN_VALUE;
 	    for (int a : array) result = Math.max(result, a);
 	    Long l2=Long.valueOf(result);
@@ -94,7 +93,7 @@ public class StatsFilter extends BaseFilter {
 	 * @param array
 	 * @return l2
 	 */
-	public static long sum(int array[]) {
+	public static long sum(int array[])throws BaseException {
 	    int result = 0;
 	    for (int a : array) result += a;
 	    Long l2=Long.valueOf(result);
@@ -106,7 +105,7 @@ public class StatsFilter extends BaseFilter {
      * @param array
      * @return l2
      */
-	public static long average(int array[]) {
+	public static long average(int array[]) throws BaseException{
 		double d = (double)sum(array)/array.length;
 	    Long l2=Long.valueOf((int) d);
 	    return l2.longValue();
@@ -119,7 +118,7 @@ public class StatsFilter extends BaseFilter {
      * @param lenght Fornisce la lunghezza dell'array
      * @return l2
      */
-	public static long average(int array[], int lenght) {
+	public static long average(int array[], int lenght)throws BaseException {
 		double d = (double)sum(array)/lenght;
 	    Long l2=Long.valueOf((int) d);
 	    return l2.longValue();
@@ -131,7 +130,7 @@ public class StatsFilter extends BaseFilter {
 	 * @param str Array di String
 	 * @return bestString Fornisce la stringa più ripetuta 
 	 */
-	public static String highestRepeated(String[] str) {
+	public static String highestRepeated(String[] str) throws BaseException{
 		// la stringa più ripetuta
 	    String[] sorted = Arrays.copyOf(str, str.length);
 	    Arrays.sort(sorted, 0, sorted.length, Comparator.reverseOrder());
@@ -163,7 +162,7 @@ public class StatsFilter extends BaseFilter {
 	 * @param str array di String
 	 * @return bestString Fornisce la stringa meno ripetuta
 	 */
-	public static String theLeastRepeated(String[] str) {
+	public static String theLeastRepeated(String[] str)throws BaseException {
 		// la stringa meno ripetuta
 	    String[] sorted = Arrays.copyOf(str, str.length);
 	    Arrays.sort(sorted, 0, sorted.length, Comparator.reverseOrder());
@@ -196,7 +195,7 @@ public class StatsFilter extends BaseFilter {
 	 * @param teamName
 	 * @return
 	 */
-	public static int getPosTeamName(Vector<AverageNameAndNumOfGoalsScorers> vet, String teamName) {
+	public static int getPosTeamName(Vector<AverageNameAndNumOfGoalsScorers> vet, String teamName) throws BaseException{
 		AverageNameAndNumOfGoalsScorers a = new AverageNameAndNumOfGoalsScorers();
 		for (int j = 0; j < vet.size(); j++) {
 			a = vet.get(j);
