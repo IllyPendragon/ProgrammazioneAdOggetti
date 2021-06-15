@@ -10,9 +10,12 @@
     <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.DisplayName"/>
     <fullyQualifiedTypeName name="it.univpm.Foot.filter.BaseFilter"/>
-    <fullyQualifiedTypeName name="it.univpm.Foot.filter.StatsFilter"/>
     <fullyQualifiedTypeName name="it.univpm.Foot.api.ChiamataCompetitions"/>
     <fullyQualifiedTypeName name="java.util.Vector"/>
     <fullyQualifiedTypeName name="it.univpm.Foot.model.Competizioni"/>
     <fullyQualifiedTypeName name="it.univpm.Foot.exceptions.ParamException"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Assertions"/>
+    <fullyQualifiedTypeName name="it.univpm.Foot.exceptions.BaseException"/>
+    <fullyQualifiedTypeName name="it.univpm.Foot.filter.StatsFilter"/>
+    <fullyQualifiedTypeName name="it.univpm.Foot.controller.Controller"/>
 </qualifiedTypeNameHistroy>

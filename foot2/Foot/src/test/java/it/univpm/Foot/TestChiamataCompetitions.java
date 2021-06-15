@@ -12,10 +12,22 @@ import org.junit.jupiter.api.Test;
 import it.univpm.Foot.api.ChiamataCompetitions;
 import it.univpm.Foot.model.Competizioni;
 
+/**
+ * Classe che testa il corretto funzionamento del metodo chiamata
+ *
+ */
 public class TestChiamataCompetitions {
-	
+	/**
+	 * Vettore di Competizioni
+	 */
 	Vector<Competizioni> result;
+	/**
+	 * Oggetto della classe Competizioni
+	 */
 	Competizioni compIta;
+	/**
+	 * Stringa contenente il risultato corretto
+	 */
     String str;
     
 	/**
@@ -49,8 +61,7 @@ public class TestChiamataCompetitions {
 			assertEquals(str,compIta.getNationality());
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
-		
+		}		
 	}
+	
 }

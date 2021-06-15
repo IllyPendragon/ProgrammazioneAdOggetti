@@ -5,28 +5,31 @@ import java.util.Vector;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import it.univpm.Foot.model.*;
 import it.univpm.Foot.exceptions.BaseException;
 import it.univpm.Foot.filter.BaseFilter;
+
 /**
 * Classe che analizza il codice json della chiamata alla rotta scorers dell'API di Football-data
 * 
 */
 public class ParserScorers {
+	
 	/**
-	 * Vettore di Scorers nel quale vengono inseriti gli Scorers creati
+	 * Vettore di Scorers nel quale vengono inseriti i marcatori creati
 	 * a partire dal JSON e poi viene restituito alla classe ChiamataScorers
 	 */
 	private Vector<Scorers> listaScorers;
+	
 	/**
 	 * Metodo che analizza il json della chiamata scorers  e restituisce un vettore di marcatori
 	 * 
 	 * @param chiamata Fornisce il codice json che viene analizzato dal metodo
 	 * @param _minNumberOfGoals Fornisce il numero minimo di Goal del marcatore
-	 * @param _position Fornisce i ruolo del giocatore
-	 * @return listaScorers Vettore di Scorers contenente gli scorers creati, poi restituito
+	 * @param _position Fornisce i ruolo del marcatore
+	 * @throws BaseException Eccezione
+	 * @return listaScorers Vettore di Scorers contenente i marcatori creati, poi restituito
 	 */
 	public Vector<Scorers> parse (String chiamata, Long _minNumberOfGoals, String _position) throws BaseException{
 		
@@ -56,7 +59,6 @@ public class ParserScorers {
 					   position = (String) player.get("position");			   
 					    
 				}				
-				//if ((_minNumberOfGoals==-1 || (numberOfGoals!=null && _minNumberOfGoals.longValue()<=numberOfGoals.longValue())) && (_position.equals("*") || (position!=null && _position.equals(position)))) {
 				if (BaseFilter.minLongController(_minNumberOfGoals, numberOfGoals) && BaseFilter.stringController(_position, position)) {
                     // -1 è il valore jolly per _minNumberOfGoals
                     // * è il carattere jolly per _position

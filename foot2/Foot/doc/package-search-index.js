@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"it.univpm.Foot"},{"l":"it.univpm.Foot.api"},{"l":"it.univpm.Foot.controller"},{"l":"it.univpm.Foot.filter"},{"l":"it.univpm.Foot.model"},{"l":"it.univpm.Foot.parser"},{"l":"it.univpm.Foot.stats"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"it.univpm.Foot.filter"}];updateSearchResults();

@@ -2,10 +2,10 @@ package it.univpm.Foot.api;
 
 import java.util.Vector;
 import java.io.BufferedReader;
-import java.io.IOException;
+//import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
+//import java.net.MalformedURLException;
 import java.net.URL;
 
 import it.univpm.Foot.exceptions.BaseException;
@@ -23,10 +23,11 @@ public class ChiamataScorers {
 	 * Metodo static che effettua la chiamata alla rotta scorers 
 	 * e passa il json al metodo parse della classe ParserScorers
 	 * 
-	 * @param position Gestisce i giocatori in base al ruolo
+	 * @param position Gestisce i marcatori in base al ruolo
 	 * @param competition Gestisce le competizioni in base al codice della competizione
-	 * @param minNumberOfGoals gestisce i giocatori in base al numero minimo dei goal segnati
-	 * @return listaScorers Vettore di Scorers ritornato dal metodo parse della classe ParserScorers
+	 * @param minNumberOfGoals gestisce i marcatori in base al numero minimo dei goal segnati
+	 * @throws BaseException Eccezione
+	 * @return listaScorers Vettore di marcatori ritornato dal metodo parse della classe ParserScorers
 	 */
 	public static Vector<Scorers> chiamata(String competition, Long minNumberOfGoals, String position) throws BaseException {
 			

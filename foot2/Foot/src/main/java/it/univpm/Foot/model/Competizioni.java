@@ -38,7 +38,7 @@ public class Competizioni {
 	 */
 	private String countryCode;
 	/**
-	 *  Variabile che descrive il giorno della competizione
+	 *  Variabile che descrive le giornate della competizione
 	 */
 	private Long currentMatchday;
 	
@@ -64,12 +64,12 @@ public class Competizioni {
 	 * 
 	 * @param nome Assegna il nome alla competizione
 	 * @param codice Assegna il codice alla competizione
-	 * @param dataIniziale Assegna la data iniziale alla competizione
-	 * @param dataFinale Assegna la data finale alla competizione
-	 * @param vincitore Assegna il vincitore della competizione
+	 * @param dataIniziale Assegna la data iniziale alla stagione
+	 * @param dataFinale Assegna la data finale alla stagione
+	 * @param vincitore Assegna il vincitore della stagione
 	 * @param nationality Assegna la nazionalità alla competizione
 	 * @param countryCode Assegna un codice di nazionalità alla competizione
-	 * @param currentMatchday Assegna una giornata alla competizione
+	 * @param currentMatchday Assegna le giornate alla competizione
 	 * @param teamsNumber Assegna il numero delle squadre 
 	 * @param numberOfAvailableSeasons Assegna la quantità media delle stagioni
 	 */
@@ -93,7 +93,7 @@ public class Competizioni {
 		return nome;
 	}
 	/**
-	 * @param name the nome to set
+	 * @param nome the nome to set
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;

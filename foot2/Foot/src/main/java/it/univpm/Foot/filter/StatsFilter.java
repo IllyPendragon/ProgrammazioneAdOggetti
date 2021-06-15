@@ -1,18 +1,20 @@
 package it.univpm.Foot.filter;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+
+//import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+//import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+//import java.util.HashSet;
+//import java.util.List;
+//import java.util.Set;
 import java.util.Vector;
 
 import it.univpm.Foot.exceptions.BaseException;
 import it.univpm.Foot.model.AverageNameAndNumOfGoalsScorers;
+
 /**
  * Classe che estende la classe BaseFilter 
  * 
@@ -29,13 +31,12 @@ public class StatsFilter extends BaseFilter {
 	/**
 	 * Metodo di tipo static che calcola il tempo in giorni tra la data finale e la data iniziale
 	 * 
-	 * @param dataIniziale 
-	 * @param dataFinale
-	 * @return timeInDays
-	 * @throws Exception (Formato delle date incorretto!)
+	 * @param dataIniziale Rappresenta la data iniziale
+	 * @param dataFinale   Rappresenta la data finale
+	 * @return timeInDays  Rirorna la data in giorni (Long)
+	 * @throws BaseException Eccezione che visualizzerà : Formato delle date incorretto!
 	 */
 	public static Long timeInDays(String dataIniziale, String dataFinale) throws BaseException {
-		// calcola il tempo in giorni tra la data finale e la data iniziale
 		Date df = null;
 		Date di = null;
 		long timeInDays = 0;
@@ -55,19 +56,20 @@ public class StatsFilter extends BaseFilter {
 	/**
 	 * Metodo di tipo static che calcola il tempo in giorni tra la data finale e la data iniziale
 	 * 
-	 * @param dataIniziale
-	 * @param dataFinale
-	 * @return
-	 * @throws Exception
+	 * @param dataIniziale Rappresenta la data iniziale
+	 * @param dataFinale   Rappresenta la data finale
+	 * @throws BaseException Eccezione
+	 * @return timeInDays  Rirorna la data in giorni(Int)
 	 */
 	public static int timeInDaysInt(String dataIniziale, String dataFinale) throws BaseException {
-		// calcola il tempo in giorni tra la data finale e la data iniziale
 		return (int) timeInDays(dataIniziale, dataFinale).intValue();	
 	}	
 	/**
 	 * Metodo di tipo static che restituisce il valore minimo di un array
-	 * @param array
-	 * @return
+	 * 
+	 * @param array Array di int da analizzare
+	 * @throws BaseException Eccezione
+	 * @return l2 Valore minimo dell'array
 	 */
 	public static long min(int array[])throws BaseException {
 	    int result = Integer.MAX_VALUE;
@@ -78,8 +80,10 @@ public class StatsFilter extends BaseFilter {
 	
 	/**
 	 * Metodo di tipo static che restituisce il valore massimo di un array
-	 * @param array
-	 * @return l2
+	 * 
+	 * @param array Array di int da analizzare
+	 * @throws BaseException Eccezione
+	 * @return l2 Valore massimo dell'array
 	 */
 	public static long max(int array[])throws BaseException {
 	    int result = Integer.MIN_VALUE;
@@ -90,8 +94,9 @@ public class StatsFilter extends BaseFilter {
 	/**
 	 * Metodo di tipo static che restituisce la somma di un array
 	 * 
-	 * @param array
-	 * @return l2
+	 * @param array Array di int da sommare
+	 * @throws BaseException Eccezione
+	 * @return l2 Somma 
 	 */
 	public static long sum(int array[])throws BaseException {
 	    int result = 0;
@@ -102,8 +107,9 @@ public class StatsFilter extends BaseFilter {
     /**
      * Metodo di tip statis che restituisce la media di un array
      * 
-     * @param array
-     * @return l2
+     * @param array Array di int da analizzare
+     * @throws BaseException Eccezione
+     * @return l2 Numero medio
      */
 	public static long average(int array[]) throws BaseException{
 		double d = (double)sum(array)/array.length;
@@ -114,11 +120,12 @@ public class StatsFilter extends BaseFilter {
 	/**
      * Metodo di tip statis che restituisce la media di un array
      * 
-     * @param array Fornisce un gruppo di variabili dello stesso tipo
+     * @param array Array di int da analizzare
      * @param lenght Fornisce la lunghezza dell'array
-     * @return l2
+     * @throws BaseException Eccezione
+     * @return l2 Numero medio
      */
-	public static long average(int array[], int lenght)throws BaseException {
+	public static long average(int array[], int lenght) throws BaseException {
 		double d = (double)sum(array)/lenght;
 	    Long l2=Long.valueOf((int) d);
 	    return l2.longValue();
@@ -127,11 +134,11 @@ public class StatsFilter extends BaseFilter {
 	/**
 	 * Metodo di tipo static che cerca la stringa più ripetuta
 	 * 
-	 * @param str Array di String
-	 * @return bestString Fornisce la stringa più ripetuta 
+	 * @param str Array di String da analizzare
+	 * @throws BaseException Eccezione
+	 * @return bestString Ritorna la stringa più ripetuta 
 	 */
 	public static String highestRepeated(String[] str) throws BaseException{
-		// la stringa più ripetuta
 	    String[] sorted = Arrays.copyOf(str, str.length);
 	    Arrays.sort(sorted, 0, sorted.length, Comparator.reverseOrder());
 	    String currentString = sorted[0];
@@ -159,8 +166,9 @@ public class StatsFilter extends BaseFilter {
 	/**
 	 *  Metodo di tipo static che cerca la stringa meno ripetuta
 	 * 
-	 * @param str array di String
-	 * @return bestString Fornisce la stringa meno ripetuta
+	 * @param str Array di String da analizzare
+	 * @throws BaseException Eccezione
+	 * @return bestString Ritorna la stringa meno ripetuta
 	 */
 	public static String theLeastRepeated(String[] str)throws BaseException {
 		// la stringa meno ripetuta
@@ -189,11 +197,12 @@ public class StatsFilter extends BaseFilter {
 	}	
 	
 	/**
-	 * Metodo di tipo static ??
+	 * Metodo di tipo static che analizza un Vettore AverageNameAndNumOfGoalsScorers
 	 * 
-	 * @param vet
-	 * @param teamName
-	 * @return
+	 * @param vet Vettore di AverageNameAndNumOfGoalsScorers
+	 * @param teamName Nome della squadra
+	 * @throws BaseException Eccezione
+	 * @return j Se i nomi delle delle squadre sono uguali, -1 altrimenti 
 	 */
 	public static int getPosTeamName(Vector<AverageNameAndNumOfGoalsScorers> vet, String teamName) throws BaseException{
 		AverageNameAndNumOfGoalsScorers a = new AverageNameAndNumOfGoalsScorers();

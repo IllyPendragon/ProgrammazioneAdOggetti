@@ -1,6 +1,6 @@
 package it.univpm.Foot.stats;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Vector;
 import it.univpm.Foot.api.ChiamataScorers;
 import it.univpm.Foot.exceptions.BaseException;
@@ -8,24 +8,27 @@ import it.univpm.Foot.filter.StatsFilter;
 import it.univpm.Foot.model.AverageNameAndNumOfGoalsScorers;
 import it.univpm.Foot.model.Scorers;
 import it.univpm.Foot.model.StatsScorers;
+
 /**
- * Classe che consente di determinare le statistiche sugli Scorers
+ * Classe che consente di determinare le statistiche sui marcatori
  *
  */
 public class StatsOnScorers {
+	
 	/**
 	 * Costruttore di default
 	 */
 	public StatsOnScorers() {
-		// TODO Auto-generated constructor stub
 	}
+	
 	/**
 	 * Metodo che consente di determinare la media dei Goal fatti,
 	 * il numero massimo/minimo/medio di Goal per marcatore, 
 	 * la media dei Goal per marcatore di ogni squadra
-	 * @param _competition Fornisce la competizione
 	 * 
-	 * @return Un oggetto ssc (StatsScorers) che contine le statistiche sugli Scorers
+	 * @param _competition Fornisce il codice della competizione
+	 * @throws BaseException Eccezione
+	 * @return ssc Un oggetto di StatsScorers che contine le statistiche sui marcatori
 	 */
 	public static StatsScorers getResult(String _competition)throws BaseException {
 		StatsScorers ssc = new StatsScorers();

@@ -16,9 +16,21 @@ import it.univpm.Foot.filter.StatsFilter;
  */
 public class StatsFilterTest1 {
 
+	    /**
+	     * Oggetto della classe StatsFilter
+	     */
 		StatsFilter stats;
-		String[] stringArray =  { "name1", "name1", "name2", "name2", "name2", "name2", "name2", "name2", "name2", "name2", "name3", "name3", "name3","name4", "name4", "name4", "name4" };; 
-        String result;
+		/**
+		 * Array di stringhe da testare
+		 */
+		String[] stringArray =  { "name1", "name1", "name2", "name2", "name2", "name2", "name2", "name2", "name2", "name2", "name3", "name3", "name3","name4", "name4", "name4", "name4" }; 
+       /**
+        * Variabile contenente il risultato da confrontare
+        */
+		String result;
+		/**
+		 * Variabile contenente il risultato corretto
+		 */
         String str;
         
 		/**
@@ -27,7 +39,7 @@ public class StatsFilterTest1 {
 		 */
 		@BeforeEach
 		void setUp() throws Exception{
-			stats = new StatsFilter();	
+			stats = new StatsFilter();
 			str = "name2";
 		}
 		
@@ -41,8 +53,8 @@ public class StatsFilterTest1 {
 		}
 		
 		/**
-		 * Test che verifica il corretto funzionamento del metodo theLeastRepeated  
-		 * @throws BaseException 
+		 * Test che verifica il corretto funzionamento del metodo highestRepeated  
+		 * @throws BaseException Eccezione
 		 */
 		@Test
 		@DisplayName("Corretto funzionamento del metodo highestRepeated")

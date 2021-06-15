@@ -1,0 +1,41 @@
+package it.univpm.Foot;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import it.univpm.Foot.exceptions.BaseException;
+import it.univpm.Foot.filter.StatsFilter;
+
+
+public class TestException {
+	
+    String dataIniziale;
+    String dataFinale;
+	/**
+	 * Inizializza i componenti che verranno utilizzati per testare i metodi
+	 * @throws Exception
+	 */
+	@BeforeEach
+	void setUp() throws Exception {	
+		dataIniziale = "15-03";
+		dataFinale = "18-03";
+	}
+	
+	/**
+	 * Distrugge ciò che è stato inizializzato nel metodo setUp
+	 * @throws Exception
+	 */
+	@AfterEach
+	void tearDown() throws Exception {
+
+	}
+	
+	@Test
+	@DisplayName("Corretta generazione dell'eccezione BaseException")
+	void stateCodeTest() {	
+		assertThrows(BaseException.class, () ->  StatsFilter.timeInDays(dataIniziale, dataFinale));
+	}
+}

@@ -1,10 +1,10 @@
 package it.univpm.Foot.api;
 
 import java.io.BufferedReader;
-import java.io.IOException;
+//import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
+//import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Vector;
 
@@ -20,11 +20,12 @@ import it.univpm.Foot.parser.ParserCompetizioni;
 public class ChiamataCompetitions {
 	
 	/**
-	 * Metodo static che effettua la chiamata alla rotta competitions 
+	 * Metodo di tipo static che effettua la chiamata alla rotta competitions 
 	 * e passa il json al metodo parse della classe ParserCompetizioni
 	 * 
 	 * @param countryCode Gestisce le competizioni in base alla nazionalità
 	 * @param competition Gestisce le competizioni in base al codice della competizione
+	 * @throws BaseException Eccezione
 	 * @return listaCompetizioni Vettore di Competizioni ritornato dal metodo parse della classe ParserCompetizioni
 	 */
 public static Vector<Competizioni> chiamata(String countryCode, String competition) throws BaseException {

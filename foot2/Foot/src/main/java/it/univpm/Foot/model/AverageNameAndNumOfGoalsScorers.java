@@ -7,15 +7,15 @@ package it.univpm.Foot.model;
 public class AverageNameAndNumOfGoalsScorers {
 
 	/**
-	 * Variabile che descrive il nome del giocatore
+	 * Variabile che descrive il nome del marcatore
 	 */
 	private String name;
 	/**
-	 * Variabile che descrive il nome della squadra del giocatore
+	 * Variabile che descrive il nome della squadra del marcatore
 	 */
 	private String teamName;
 	/**
-	 * Variabile che descrive il numero dei Goal segnati dal giocatore
+	 * Variabile che descrive il numero dei Goal segnati dal marcatore
 	 */
 	private long numberOfGoals;
 	/**
@@ -33,14 +33,13 @@ public class AverageNameAndNumOfGoalsScorers {
 	 */
 	
 	public AverageNameAndNumOfGoalsScorers() {
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * Costruttore utile all'inizializzazione dell'oggetto
 	 * 
-	 * @param name Assegna il nome al giocatore
-	 * @param numberOfGoals Assegna il numero dei Goal del giocatore
+	 * @param name Assegna il nome al marcatore
+	 * @param numberOfGoals Assegna il numero dei Goal del marcatore
 	 * @param teamName Assegna il nome alla squadra
 	 * @param numberScorers Assegna il numero dei marcatori
 	 * @param averageOfGoals Assegna la media dei Goal segnati

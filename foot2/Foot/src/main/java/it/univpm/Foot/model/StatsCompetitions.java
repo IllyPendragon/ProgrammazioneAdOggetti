@@ -9,7 +9,6 @@ public class StatsCompetitions {
 	 * Costruttore di default
 	 */
 	public StatsCompetitions() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	/**
@@ -29,7 +28,7 @@ public class StatsCompetitions {
 	 */
 	private Long maxNumberTeams = null;
 	/**
-	 * Variabile che descrive la media delle competizioni
+	 * Variabile che descrive il numero medio delle competizioni
 	 */
 	private Long averageNumberTeams = null;
 	/**

@@ -32,7 +32,6 @@ public class StatsScorers {
 	 * Costruttore di default
 	 */
 	public StatsScorers() {
-		// TODO Auto-generated constructor stub
 	}
    
     /**

@@ -17,7 +17,6 @@ public class StatsOnCompetitions {
 	 * Costruttore di default
 	 */
 	public StatsOnCompetitions() {
-		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * Metodo che consente di determinare il numero minimo/massimo/medio di squadre,
@@ -25,8 +24,8 @@ public class StatsOnCompetitions {
 	 * 
 	 * @param _countryCode Fornisce il codice di nazionalità della competizione
 	 * @param _competition Fornisce la competizione
-	 * 
-	 * @return Un oggetto sc (StatsCompetition) che contine le statistiche sulle competizioni
+	 * @throws BaseException Eccezione
+	 * @return sc Oggetto di StatsCompetition che contine le statistiche sulle competizioni
 	 */
 	public static StatsCompetitions getResult(String _countryCode, String _competition) throws BaseException {
 		StatsCompetitions sc = new StatsCompetitions();

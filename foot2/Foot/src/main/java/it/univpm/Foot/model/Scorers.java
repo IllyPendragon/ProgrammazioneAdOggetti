@@ -5,19 +5,19 @@ package it.univpm.Foot.model;
  */
 public class Scorers {
 	/**
-	 * Variabile che descrive il nome del giocatore
+	 * Variabile che descrive il nome del marcatore
 	 */
 	private String name;
 	/**
-	 * Variabile che descrive il ruolo del giocatore
+	 * Variabile che descrive il ruolo del marcatore
 	 */
 	private String position;
 	/**
-	 * Variabile che descrive il numero dei Goal seganti dal giocatore
+	 * Variabile che descrive il numero dei Goal seganti dal marcatore
 	 */
 	private Long numberOfGoals;
 	/**
-	 * Variabile che descrive il nome della squadra del giocatore
+	 * Variabile che descrive il nome della squadra del marcatore
 	 */
 	private String teamName;
 	
@@ -26,15 +26,14 @@ public class Scorers {
 	 */
 	public Scorers() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * Costruttore utile all'inizializzazione dell'oggeto
 	 * 
-	 * @param name Assegna il nome al giocatore
-	 * @param position Assegna il ruolo al giocatore
-	 * @param numberOfGoals Assegna il numero dei Goal segnati dal giocatore
-	 * @param teamName Assegna il nome della squadra del giocatore
+	 * @param name Assegna il nome al marcatore
+	 * @param position Assegna il ruolo al marcatore
+	 * @param numberOfGoals Assegna il numero dei Goal segnati dal marcatore
+	 * @param teamName Assegna il nome della squadra del marcatore
 	 */
 	public Scorers(String name, String position, Long numberOfGoals, String teamName) {
 		super();
