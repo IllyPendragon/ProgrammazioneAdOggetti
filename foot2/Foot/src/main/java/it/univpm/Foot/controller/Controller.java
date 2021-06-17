@@ -42,8 +42,7 @@ public class Controller {
 	 *                       
 	 */
 	@GetMapping("/competitions")
-	public  Vector<Competizioni> competitions (@RequestParam String countryCode, String competition) throws BaseException {
-			System.out.println("inizio JsonRest");		
+	public  Vector<Competizioni> competitions (@RequestParam String countryCode, String competition) throws BaseException {		
 			if(competition.isEmpty() || countryCode.isEmpty()) throw new BaseException("Parametro vuoto!! Inserire almeno il carattere Jolly *");
 		    return ChiamataCompetitions.chiamata(countryCode, competition); 		
 		}
@@ -63,7 +62,6 @@ public class Controller {
 	
 	@GetMapping("/scorers")
 	public Vector<Scorers> scorers (@RequestParam String competition, Long minNumberOfGoals, String position)throws BaseException {
-		System.out.println("inizio JsonRest");
 		if(competition.isEmpty() || position.isEmpty()) throw new BaseException("I parametri competition o position sono vuoti!! Inserire almeno il carattere Jolly *");
 		return ChiamataScorers.chiamata(competition, minNumberOfGoals, position); 
 	 }
@@ -83,7 +81,6 @@ public class Controller {
 	
 	@GetMapping("/statsCompetitions")
 	public StatsCompetitions statsCompetitions(@RequestParam String countryCode, String competition)  throws BaseException {
-		System.out.println("inizio JsonRest");
 		if(competition.isEmpty() || countryCode.isEmpty()) throw new BaseException("Parametro vuoto!! Inserire almeno il carattere Jolly *");
 		return StatsOnCompetitions.getResult(countryCode, competition); 
 		
@@ -102,8 +99,10 @@ public class Controller {
 	
 	@GetMapping("/statsScorers")
 	public StatsScorers statsScorers(@RequestParam String competition) throws BaseException {
-		System.out.println("inizio JsonRest");
-		if(competition.isEmpty()) throw new BaseException("Parametro vuoto! Puoi inserire solo: BL1,PL,SA,PD,FL1,DED,PPL,CL,WC");
-			return StatsOnScorers.getResult(competition);	
+		if (competition.equals("BL1") || competition.equals("SA") ||competition.equals("PD") ||
+				    competition.equals("FL1") ||competition.equals("PPL") ||competition.equals("WC"))
+			return StatsOnScorers.getResult(competition); 
+		else throw new BaseException("Parametro vuoto o errato! Puoi inserire solo: BL1,SA,PD,FL1,PPL,WC");
+				
 	 }	
 }

@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"it.univpm.Foot.filter","l":"BaseFilter"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"it.univpm.Foot.api","l":"ChiamataCompetitions"}];updateSearchResults();

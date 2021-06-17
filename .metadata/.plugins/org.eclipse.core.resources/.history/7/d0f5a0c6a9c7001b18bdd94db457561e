@@ -1,9 +1,0 @@
-package it.univpm.Foot.exceptions;
-
-public class ParamException extends Exception{
-
-	public ParamException()
-	  {
-	    super("Attenzione, inserire parametro competizione!!");
-	  } 
-}
